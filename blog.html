@@ -13,15 +13,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-blue: #4585FF;
-            --primary-purple: #7B06FA;
-            --primary-teal: #004A28A;
-            --dark-bg: #0F1019;
-            --light-bg: #F6F6F6;
-            --glass-bg: rgba(10, 10, 20, 0.5);
-            --text-light: #FFFFFF;
-            --text-gray: #B0B0B0;
-            --card-border: rgba(100, 100, 255, 0.2);
+            /* Your Color Palette */
+            --electric-blue: #4585FF;
+            --neon-purple: #7B06FA;
+            --teal: #004A28;
+            --dark-navy: #1A1D29;
+            --light-gray: #F6F6F6;
+            
+            /* Light theme (default) */
+            --bg-primary: #ffffff;
+            --bg-secondary: var(--light-gray);
+            --bg-accent: rgba(246, 246, 246, 0.9);
+            --bg-hero: linear-gradient(135deg, rgba(69, 133, 255, 0.05), rgba(123, 6, 250, 0.05));
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(69, 133, 255, 0.2);
+            --text-primary: var(--dark-navy);
+            --text-secondary: var(--teal);
+            --text-muted: #6b7280;
+            --shadow-light: rgba(26, 29, 41, 0.1);
+            --shadow-medium: rgba(26, 29, 41, 0.15);
+            --shadow-heavy: rgba(26, 29, 41, 0.25);
+            --accent-gradient: linear-gradient(135deg, var(--electric-blue), var(--neon-purple));
+            --card-hover: rgba(69, 133, 255, 0.1);
+        }
+
+        [data-theme="dark"] {
+            /* Dark theme */
+            --bg-primary: #0B0D14;
+            --bg-secondary: var(--dark-navy);
+            --bg-accent: rgba(26, 29, 41, 0.9);
+            --bg-hero: linear-gradient(135deg, rgba(69, 133, 255, 0.1), rgba(123, 6, 250, 0.1));
+            --glass-bg: rgba(26, 29, 41, 0.7);
+            --glass-border: rgba(123, 6, 250, 0.3);
+            --text-primary: var(--light-gray);
+            --text-secondary: #E5E7EB;
+            --text-muted: #9CA3AF;
+            --shadow-light: rgba(0, 0, 0, 0.3);
+            --shadow-medium: rgba(0, 0, 0, 0.4);
+            --shadow-heavy: rgba(0, 0, 0, 0.6);
+            --accent-gradient: linear-gradient(135deg, var(--electric-blue), var(--neon-purple));
+            --card-hover: rgba(123, 6, 250, 0.2);
         }
 
         * {
@@ -32,16 +63,18 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: all 0.3s ease;
         }
 
         h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             letter-spacing: -0.02em;
+            color: var(--text-primary);
         }
 
         .container {
@@ -56,9 +89,9 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(15, 16, 25, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(123, 6, 250, 0.2);
+            background: var(--bg-accent);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
             padding: 1rem 0;
         }
 
@@ -74,19 +107,20 @@
             gap: 10px;
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text-light);
+            color: var(--text-primary);
             text-decoration: none;
         }
 
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            background: var(--accent-gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            box-shadow: 0 4px 15px rgba(69, 133, 255, 0.3);
         }
 
         .logo-icon::before {
@@ -95,7 +129,7 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: var(--dark-bg);
+            background: var(--bg-primary);
             z-index: 1;
         }
 
@@ -105,17 +139,18 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: var(--primary-purple);
+            background: var(--neon-purple);
             z-index: 2;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
             position: relative;
@@ -124,7 +159,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-purple);
+            color: var(--neon-purple);
         }
 
         .nav-links a::after {
@@ -134,7 +169,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-purple);
+            background: var(--accent-gradient);
             transition: width 0.3s ease;
         }
 
@@ -142,11 +177,75 @@
             width: 100%;
         }
 
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: var(--glass-bg);
+            border: 2px solid var(--glass-border);
+            border-radius: 50px;
+            width: 50px;
+            height: 26px;
+            position: relative;
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--neon-purple);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(123, 6, 250, 0.3);
+        }
+
+        .theme-toggle-slider {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow-medium);
+        }
+
+        [data-theme="dark"] .theme-toggle-slider {
+            transform: translateX(22px);
+        }
+
+        .theme-toggle-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            transition: opacity 0.3s ease;
+        }
+
+        .theme-toggle-icon.sun {
+            left: 6px;
+            opacity: 1;
+            color: var(--electric-blue);
+        }
+
+        .theme-toggle-icon.moon {
+            right: 6px;
+            opacity: 0;
+            color: var(--neon-purple);
+        }
+
+        [data-theme="dark"] .theme-toggle-icon.sun {
+            opacity: 0;
+        }
+
+        [data-theme="dark"] .theme-toggle-icon.moon {
+            opacity: 1;
+        }
+
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            color: var(--text-light);
+            color: var(--text-primary);
             font-size: 1.5rem;
             cursor: pointer;
         }
@@ -160,6 +259,7 @@
             overflow: hidden;
             padding-top: 4rem;
             margin-bottom: 3rem;
+            background: var(--bg-hero);
         }
 
         .hero::before {
@@ -169,7 +269,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(69, 133, 255, 0.1) 0%, rgba(15, 16, 25, 0) 70%);
+            background: radial-gradient(circle at center, rgba(69, 133, 255, 0.15) 0%, transparent 70%);
             z-index: -1;
         }
 
@@ -186,10 +286,11 @@
             font-size: clamp(2.5rem, 5vw, 3.5rem);
             margin-bottom: 1rem;
             line-height: 1.1;
+            color: var(--text-primary);
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+            background: var(--accent-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -197,7 +298,7 @@
 
         .hero p {
             font-size: clamp(1.1rem, 2vw, 1.3rem);
-            color: var(--text-gray);
+            color: var(--text-muted);
             max-width: 700px;
             margin: 0 auto;
         }
@@ -222,12 +323,18 @@
 
         .glass-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 32px var(--shadow-medium);
             margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px var(--shadow-heavy);
         }
 
         .blog-post {
@@ -246,20 +353,21 @@
             width: 100%;
             height: 250px;
             border-radius: 15px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            background: var(--accent-gradient);
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4rem;
             color: white;
+            box-shadow: 0 8px 25px rgba(69, 133, 255, 0.3);
         }
 
         .post-meta {
             display: flex;
             gap: 1rem;
             margin-bottom: 1rem;
-            color: var(--text-gray);
+            color: var(--text-muted);
             font-size: 0.9rem;
         }
 
@@ -275,22 +383,22 @@
         }
 
         .post-title a {
-            color: var(--text-light);
+            color: var(--text-primary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .post-title a:hover {
-            color: var(--primary-purple);
+            color: var(--neon-purple);
         }
 
         .post-excerpt {
-            color: var(--text-gray);
+            color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
 
         .read-more {
-            color: var(--primary-purple);
+            color: var(--neon-purple);
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -415,9 +523,9 @@
 
         /* Footer */
         footer {
-            background: rgba(5, 5, 10, 0.8);
+            background: var(--bg-secondary);
             padding: 3rem 0 2rem;
-            border-top: 1px solid var(--card-border);
+            border-top: 1px solid var(--glass-border);
         }
 
         .footer-content {
@@ -432,6 +540,7 @@
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 0.5rem;
+            color: var(--text-primary);
         }
 
         .footer-column h4::after {
@@ -441,7 +550,7 @@
             left: 0;
             width: 50px;
             height: 2px;
-            background: var(--primary-purple);
+            background: var(--accent-gradient);
         }
 
         .footer-links {
@@ -453,20 +562,20 @@
         }
 
         .footer-links a {
-            color: var(--text-gray);
+            color: var(--text-muted);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--primary-purple);
+            color: var(--neon-purple);
         }
 
         .copyright {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-gray);
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
             font-size: 0.9rem;
         }
 
@@ -505,6 +614,11 @@
                 <a href="index.html#testimonials">Testimonials</a>
                 <a href="blog.html">Blog</a>
                 <a href="index.html#contact">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <div class="theme-toggle-slider"></div>
+                    <i class="fas fa-sun theme-toggle-icon sun"></i>
+                    <i class="fas fa-moon theme-toggle-icon moon"></i>
+                </button>
             </div>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -700,5 +814,38 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        
+        // Initialize theme based on user preference or localStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            // Default to light theme
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+        
+        // Theme toggle click handler
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                // Add a subtle animation feedback
+                themeToggle.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    themeToggle.style.transform = 'scale(1)';
+                }, 150);
+            });
+        }
+    </script>
 </body>
 </html>
