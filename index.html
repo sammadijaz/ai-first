@@ -66,24 +66,89 @@
           <img src="logo.svg" alt="AI First Partners" class="logo-svg">
         </a>
         <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#blog">Blog</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <div class="theme-toggle-slider"></div>
-            <i class="fas fa-sun theme-toggle-icon sun"></i>
-            <i class="fas fa-moon theme-toggle-icon moon"></i>
-          </button>
+          <a href="#home" class="nav-link">Home</a>
+          
+          <div class="nav-item dropdown">
+            <a href="#services" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Services
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="#ai-strategy" class="dropdown-link" role="menuitem">AI Strategy & Consulting</a>
+                <a href="#machine-learning" class="dropdown-link" role="menuitem">Machine Learning Solutions</a>
+                <a href="#data-science" class="dropdown-link" role="menuitem">Data Science & Analytics</a>
+                <a href="#automation" class="dropdown-link" role="menuitem">Process Automation</a>
+                <a href="#ai-integration" class="dropdown-link" role="menuitem">AI Integration</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a href="#solutions" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Solutions
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="#enterprise" class="dropdown-link" role="menuitem">Enterprise AI</a>
+                <a href="#startup" class="dropdown-link" role="menuitem">Startup Scale-up</a>
+                <a href="#custom-ai" class="dropdown-link" role="menuitem">Custom AI Development</a>
+                <a href="#ai-platform" class="dropdown-link" role="menuitem">AI Platform Services</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a href="#industries" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Industries
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="#fintech" class="dropdown-link" role="menuitem">FinTech</a>
+                <a href="#healthcare" class="dropdown-link" role="menuitem">Healthcare</a>
+                <a href="#ecommerce" class="dropdown-link" role="menuitem">E-commerce</a>
+                <a href="#manufacturing" class="dropdown-link" role="menuitem">Manufacturing</a>
+                <a href="#retail" class="dropdown-link" role="menuitem">Retail</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a href="#insights" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Insights
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="#blog" class="dropdown-link" role="menuitem">Blog</a>
+                <a href="#case-studies" class="dropdown-link" role="menuitem">Case Studies</a>
+                <a href="#whitepapers" class="dropdown-link" role="menuitem">Whitepapers</a>
+                <a href="#webinars" class="dropdown-link" role="menuitem">Webinars</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a href="#about" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              About Us
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="#our-team" class="dropdown-link" role="menuitem">Our Team</a>
+                <a href="#our-story" class="dropdown-link" role="menuitem">Our Story</a>
+                <a href="#partnerships" class="dropdown-link" role="menuitem">Strategic Alliances</a>
+                <a href="#careers" class="dropdown-link" role="menuitem">Careers</a>
+                <a href="#testimonials" class="dropdown-link" role="menuitem">Testimonials</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="nav-link nav-cta">Contact</a>
         </div>
         <div class="mobile-controls">
-          <button class="theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
-            <div class="theme-toggle-slider"></div>
-            <i class="fas fa-sun theme-toggle-icon sun"></i>
-            <i class="fas fa-moon theme-toggle-icon moon"></i>
-          </button>
           <button class="mobile-menu-btn" id="mobileMenuBtn">
             <i class="fas fa-bars"></i>
           </button>
@@ -103,12 +168,77 @@
         </button>
       </div>
       <div class="mobile-nav-links">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#blog">Blog</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" class="mobile-nav-link">Home</a>
+        
+        <div class="mobile-nav-item dropdown">
+          <button class="mobile-nav-link dropdown-toggle" aria-expanded="false">
+            Services
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="#ai-strategy" class="mobile-dropdown-link">AI Strategy & Consulting</a>
+            <a href="#machine-learning" class="mobile-dropdown-link">Machine Learning Solutions</a>
+            <a href="#data-science" class="mobile-dropdown-link">Data Science & Analytics</a>
+            <a href="#automation" class="mobile-dropdown-link">Process Automation</a>
+            <a href="#ai-integration" class="mobile-dropdown-link">AI Integration</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-item dropdown">
+          <button class="mobile-nav-link dropdown-toggle" aria-expanded="false">
+            Solutions
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="#enterprise" class="mobile-dropdown-link">Enterprise AI</a>
+            <a href="#startup" class="mobile-dropdown-link">Startup Scale-up</a>
+            <a href="#custom-ai" class="mobile-dropdown-link">Custom AI Development</a>
+            <a href="#ai-platform" class="mobile-dropdown-link">AI Platform Services</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-item dropdown">
+          <button class="mobile-nav-link dropdown-toggle" aria-expanded="false">
+            Industries
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="#fintech" class="mobile-dropdown-link">FinTech</a>
+            <a href="#healthcare" class="mobile-dropdown-link">Healthcare</a>
+            <a href="#ecommerce" class="mobile-dropdown-link">E-commerce</a>
+            <a href="#manufacturing" class="mobile-dropdown-link">Manufacturing</a>
+            <a href="#retail" class="mobile-dropdown-link">Retail</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-item dropdown">
+          <button class="mobile-nav-link dropdown-toggle" aria-expanded="false">
+            Insights
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="#blog" class="mobile-dropdown-link">Blog</a>
+            <a href="#case-studies" class="mobile-dropdown-link">Case Studies</a>
+            <a href="#whitepapers" class="mobile-dropdown-link">Whitepapers</a>
+            <a href="#webinars" class="mobile-dropdown-link">Webinars</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-item dropdown">
+          <button class="mobile-nav-link dropdown-toggle" aria-expanded="false">
+            About Us
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="#our-team" class="mobile-dropdown-link">Our Team</a>
+            <a href="#our-story" class="mobile-dropdown-link">Our Story</a>
+            <a href="#partnerships" class="mobile-dropdown-link">Strategic Alliances</a>
+            <a href="#careers" class="mobile-dropdown-link">Careers</a>
+            <a href="#testimonials" class="mobile-dropdown-link">Testimonials</a>
+          </div>
+        </div>
+
+        <a href="#contact" class="mobile-nav-link mobile-nav-cta">Contact</a>
       </div>
     </div>
 
@@ -116,7 +246,11 @@
     <section id="home" class="hero">
       <div id="particles-js"></div>
       <div class="hero-content">
-        <h1>Scale Your Startup <span>with AI</span></h1>
+        <div class="hero-titles">
+          <h1 class="hero-title" data-delay="0">Move <span>with AI</span></h1>
+          <h1 class="hero-title" data-delay="1">Scale <span>with AI</span></h1>
+          <h1 class="hero-title" data-delay="2">Drive <span>with AI</span></h1>
+        </div>
         <p>
           We build intelligent solutions that drive growth, innovation, and
           competitive advantage for forward-thinking startups.
@@ -132,10 +266,9 @@
     <section id="services">
       <div class="container">
         <div class="section-header">
-          <h2>Our AI Services</h2>
+          <h2>AI Services & Solutions</h2>
           <p>
-            We specialize in creating cutting-edge AI solutions tailored to your
-            business needs
+            Comprehensive artificial intelligence services designed to transform your startup's operations, accelerate growth, and unlock unprecedented competitive advantages through cutting-edge technology solutions.
           </p>
         </div>
         <!-- Desktop: Grid layout -->
@@ -335,6 +468,12 @@
     <!-- Stats Section -->
     <section class="stats">
       <div class="container">
+        <div class="section-header">
+          <h2>Our Track Record</h2>
+          <p>
+            Proven results that demonstrate our commitment to excellence and our ability to deliver transformational AI solutions that drive measurable business outcomes for our clients.
+          </p>
+        </div>
         <div class="stats-grid">
           <div class="stat-item">
             <h3>98%</h3>
@@ -362,27 +501,25 @@
         <div class="section-header">
           <h2>About AI First Partners</h2>
           <p>
-            We're a team of AI experts dedicated to helping startups leverage
-            artificial intelligence
+            Leading AI consulting firm helping startups harness artificial intelligence for sustainable growth and market leadership.
           </p>
         </div>
         <div class="glass-card" style="padding: 0;">
           <div style="display: flex; flex-wrap: wrap; gap: 0; align-items: stretch;">
-            <div style="flex: 1; min-width: 300px; padding: 2.5rem 2rem; display: flex; flex-direction: column; justify-content: center;">
-              <h3 style="color: var(--electric-blue); margin-bottom: 1.2rem;">Our Mission</h3>
-              <p style="margin-bottom: 1.2rem; color: var(--text-primary); font-size: 1.15rem;">
-                At <span style="color: var(--neon-purple); font-weight: 700;">AI First Partners</span>, we believe that artificial intelligence is the key to unlocking unprecedented growth for startups.<br>
-                Our mission is to democratize access to cutting-edge AI technologies, making them accessible and actionable for businesses of all sizes.
+            <div style="flex: 1; min-width: 300px; padding: 2rem 1.5rem; display: flex; flex-direction: column; justify-content: center;">
+              <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Our Mission</h3>
+              <p style="margin-bottom: 1rem; color: var(--text-primary); font-size: 1.1rem;">
+                At <span style="color: var(--primary-color); font-weight: 700;">AI First Partners</span>, we democratize access to cutting-edge AI technologies, making them accessible for businesses of all sizes.
               </p>
-              <p style="color: var(--text-secondary); font-size: 1.05rem;">
-                We combine deep technical expertise with business acumen to deliver solutions that not only solve today's challenges but also prepare our clients for tomorrow's opportunities.
+              <p style="color: var(--text-primary); font-size: 1rem;">
+                We combine technical expertise with business acumen to deliver solutions that solve today's challenges and prepare for tomorrow's opportunities.
               </p>
             </div>
-            <div style="flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border-left: 1px solid var(--glass-border); padding: 2rem;">
-              <div style="background: var(--accent-gradient); padding: 2.5rem 2rem; border-radius: 20px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 32px var(--shadow-medium); max-width: 280px; text-align: center;">
-                <i class="fas fa-lightbulb" style="font-size: 3.5rem; margin-bottom: 1.2rem; color: #fff;"></i>
-                <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.4rem;">Innovation Driven</h4>
-                <p style="color: #fff; opacity: 0.9; text-align: center; font-size: 1rem; line-height: 1.5;">
+            <div style="flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border-left: 1px solid var(--glass-border); padding: 1.5rem;">
+              <div style="background: var(--main-color); padding: 2rem 1.5rem; border-radius: 20px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 32px var(--shadow-medium); max-width: 260px; text-align: center;">
+                <i class="fas fa-lightbulb" style="font-size: 3rem; margin-bottom: 1rem; color: #fff;"></i>
+                <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.3rem;">Innovation Driven</h4>
+                <p style="color: #fff; opacity: 0.9; text-align: center; font-size: 0.95rem; line-height: 1.4;">
                   We stay at the forefront of AI research to bring you the latest breakthroughs.
                 </p>
               </div>
@@ -396,8 +533,10 @@
     <section id="testimonials" class="testimonials-section">
       <div class="container">
         <div class="section-header">
-          <h2>Client Testimonials</h2>
-          <p>Hear what our clients say about working with us</p>
+          <h2>Client Success Stories</h2>
+          <p>
+            Real testimonials from startup founders who have transformed their businesses with our AI solutions.
+          </p>
         </div>
         <div class="testimonials-container">
           <div class="testimonials-track">
@@ -576,158 +715,232 @@
       </div>
     </section>
 
+    <!-- Strategic Alliance Section -->
+    <section id="partnerships" class="strategic-alliance">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Strategic Alliances</h2>
+          <p>
+            We partner with industry leaders and innovative companies to deliver comprehensive AI solutions and drive transformational growth for our clients.
+          </p>
+        </div>
+        <div class="partners-grid">
+          <a href="https://openai.com" target="_blank" rel="noopener noreferrer" class="partner-logo-link">
+            <div class="partner-logo">
+              <img src="openai.svg" alt="OpenAI Partnership" class="logo-image">
+            </div>
+          </a>
+          <a href="https://cloud.google.com" target="_blank" rel="noopener noreferrer" class="partner-logo-link">
+            <div class="partner-logo">
+              <img src="google.png" alt="Google Cloud Partnership" class="logo-image">
+            </div>
+          </a>
+          <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" class="partner-logo-link">
+            <div class="partner-logo">
+              <img src="aws.png" alt="Amazon Web Services Partnership" class="logo-image">
+            </div>
+          </a>
+          <a href="https://microsoft.com" target="_blank" rel="noopener noreferrer" class="partner-logo-link">
+            <div class="partner-logo">
+              <img src="microsoft.svg" alt="Microsoft Partnership" class="logo-image">
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
 
         <!-- Blog Section -->
     <section id="blog">
         <div class="container">
             <div class="section-header">
-                <h2>Latest AI Insights</h2>
-                <p>Explore our thoughts on the future of artificial intelligence</p>
+                <h2>AI Insights & Expertise</h2>
+                <p>
+                    Expert thought leadership, practical insights, and cutting-edge research on artificial intelligence trends, implementation strategies, and best practices for startup growth and innovation.
+                </p>
             </div>
-            <div class="glass-card" style="padding: 0; overflow: hidden;">
-                <div style="display: flex; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 300px; padding: 2rem;">
-                        <h3 style="margin-bottom: 1.5rem;">Featured Articles</h3>
-                        <div class="blog-post">
-                            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-                                <div style="width: 80px; height: 80px; border-radius: 10px; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(69, 133, 255, 0.3);">
-                                    <i class="fas fa-microchip" style="font-size: 2rem; color: white;"></i>
-                                </div>
-                                <div>
-                                    <h4 style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-primary); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--neon-purple)'" onmouseout="this.style.color='var(--text-primary)'">The Future of Generative AI in Startups</a></h4>
-                                    <p style="color: var(--text-muted); font-size: 0.9rem;">May 15, 2023 • 5 min read</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-post">
-                            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-                                <div style="width: 80px; height: 80px; border-radius: 10px; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(69, 133, 255, 0.3);">
-                                    <i class="fas fa-robot" style="font-size: 2rem; color: white;"></i>
-                                </div>
-                                <div>
-                                    <h4 style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-primary); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--neon-purple)'" onmouseout="this.style.color='var(--text-primary)'">Building Ethical AI Systems</a></h4>
-                                    <p style="color: var(--text-muted); font-size: 0.9rem;">April 28, 2023 • 7 min read</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-post">
-                            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-                                <div style="width: 80px; height: 80px; border-radius: 10px; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(69, 133, 255, 0.3);">
-                                    <i class="fas fa-chart-line" style="font-size: 2rem; color: white;"></i>
-                                </div>
-                                <div>
-                                    <h4 style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-primary); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--neon-purple)'" onmouseout="this.style.color='var(--text-primary)'">AI-Driven Growth Strategies for 2023</a></h4>
-                                    <p style="color: var(--text-muted); font-size: 0.9rem;">April 12, 2023 • 6 min read</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-post">
-                            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-                                <div style="width: 80px; height: 80px; border-radius: 10px; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(69, 133, 255, 0.3);">
-                                    <i class="fas fa-cloud" style="font-size: 2rem; color: white;"></i>
-                                </div>
-                                <div>
-                                    <h4 style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-primary); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--neon-purple)'" onmouseout="this.style.color='var(--text-primary)'">Cloud-Based AI Solutions: Scalability & Performance</a></h4>
-                                    <p style="color: var(--text-muted); font-size: 0.9rem;">March 30, 2023 • 8 min read</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="text-align: center; margin-top: 1rem;">
-                            <a href="/blog.html" class="btn btn-secondary">View All Articles</a>
-                        </div>
+            <div class="blog-grid">
+                <a href="article-generative-ai-startups.html" class="glass-card blog-card" style="text-decoration: none; color: inherit;">
+                    <div class="service-icon">
+                        <i class="fas fa-microchip"></i>
                     </div>
-                    <div style="flex: 1; min-width: 300px; background: var(--bg-secondary); padding: 2rem; border-left: 1px solid var(--glass-border);">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Categories</h3>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem;">
-                            <a href="#" style="padding: 0.5rem 1rem; background: rgba(123, 6, 250, 0.15); border: 1px solid rgba(123, 6, 250, 0.3); border-radius: 20px; text-decoration: none; color: var(--neon-purple); font-size: 0.9rem; transition: all 0.3s ease;">Machine Learning</a>
-                            <a href="#" style="padding: 0.5rem 1rem; background: rgba(123, 6, 250, 0.15); border: 1px solid rgba(123, 6, 250, 0.3); border-radius: 20px; text-decoration: none; color: var(--neon-purple); font-size: 0.9rem; transition: all 0.3s ease;">NLP</a>
-                            <a href="#" style="padding: 0.5rem 1rem; background: rgba(123, 6, 250, 0.15); border: 1px solid rgba(123, 6, 250, 0.3); border-radius: 20px; text-decoration: none; color: var(--neon-purple); font-size: 0.9rem; transition: all 0.3s ease;">Computer Vision</a>
-                            <a href="#" style="padding: 0.5rem 1rem; background: rgba(123, 6, 250, 0.15); border: 1px solid rgba(123, 6, 250, 0.3); border-radius: 20px; text-decoration: none; color: var(--neon-purple); font-size: 0.9rem; transition: all 0.3s ease;">AI Ethics</a>
-                            <a href="#" style="padding: 0.5rem 1rem; background: rgba(123, 6, 250, 0.15); border: 1px solid rgba(123, 6, 250, 0.3); border-radius: 20px; text-decoration: none; color: var(--neon-purple); font-size: 0.9rem; transition: all 0.3s ease;">Startups</a>
-                            <a href="#" style="padding: 0.5rem 1rem; background: rgba(123, 6, 250, 0.15); border: 1px solid rgba(123, 6, 250, 0.3); border-radius: 20px; text-decoration: none; color: var(--neon-purple); font-size: 0.9rem; transition: all 0.3s ease;">Automation</a>
-                        </div>
-                        
-                        <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Search Articles</h3>
-                        <div style="position: relative; margin-bottom: 2rem;">
-                            <input type="text" placeholder="Search our blog..." style="width: 100%; padding: 1rem 1rem 1rem 3rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 10px; color: var(--text-primary); backdrop-filter: blur(10px);">
-                            <i class="fas fa-search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
-                        </div>
-                        
-                        <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Popular Tags</h3>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span style="padding: 0.3rem 0.8rem; background: rgba(69, 133, 255, 0.15); border: 1px solid rgba(69, 133, 255, 0.3); color: var(--electric-blue); border-radius: 20px; font-size: 0.8rem;">Deep Learning</span>
-                            <span style="padding: 0.3rem 0.8rem; background: rgba(69, 133, 255, 0.15); border: 1px solid rgba(69, 133, 255, 0.3); color: var(--electric-blue); border-radius: 20px; font-size: 0.8rem;">Neural Networks</span>
-                            <span style="padding: 0.3rem 0.8rem; background: rgba(69, 133, 255, 0.15); border: 1px solid rgba(69, 133, 255, 0.3); color: var(--electric-blue); border-radius: 20px; font-size: 0.8rem;">Transformers</span>
-                            <span style="padding: 0.3rem 0.8rem; background: rgba(69, 133, 255, 0.15); border: 1px solid rgba(69, 133, 255, 0.3); color: var(--electric-blue); border-radius: 20px; font-size: 0.8rem;">AI Strategy</span>
-                            <span style="padding: 0.3rem 0.8rem; background: rgba(69, 133, 255, 0.15); border: 1px solid rgba(69, 133, 255, 0.3); color: var(--electric-blue); border-radius: 20px; font-size: 0.8rem;">Data Science</span>
-                            <span style="padding: 0.3rem 0.8rem; background: rgba(69, 133, 255, 0.15); border: 1px solid rgba(69, 133, 255, 0.3); color: var(--electric-blue); border-radius: 20px; font-size: 0.8rem;">Startup Growth</span>
-                        </div>
+                    <h3>The Future of Generative AI in Startups</h3>
+                    <p>Explore how generative AI is transforming startup landscapes, from product development to customer engagement strategies.</p>
+                    <div class="blog-meta">
+                        <span>May 15, 2023 • 5 min read</span>
+                    </div>
+                </a>
+                
+                <div class="glass-card blog-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Building Ethical AI Systems</h3>
+                    <p>Learn best practices for developing responsible AI solutions that prioritize transparency, fairness, and user trust.</p>
+                    <div class="blog-meta">
+                        <span>April 28, 2023 • 7 min read</span>
                     </div>
                 </div>
+                
+                <div class="glass-card blog-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>AI-Driven Growth Strategies for 2023</h3>
+                    <p>Discover data-driven approaches to scale your business using artificial intelligence and machine learning insights.</p>
+                    <div class="blog-meta">
+                        <span>April 12, 2023 • 6 min read</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card blog-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud-Based AI Solutions</h3>
+                    <p>Maximize scalability and performance with cloud-native AI architectures designed for modern enterprise needs.</p>
+                    <div class="blog-meta">
+                        <span>March 30, 2023 • 8 min read</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card blog-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>AI Security & Privacy Best Practices</h3>
+                    <p>Essential security frameworks and privacy protocols for protecting AI systems and ensuring compliance with data regulations.</p>
+                    <div class="blog-meta">
+                        <span>March 15, 2023 • 6 min read</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card blog-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Scaling AI from Prototype to Production</h3>
+                    <p>A comprehensive guide to deploying AI models at scale, from MVP development to enterprise-grade production systems.</p>
+                    <div class="blog-meta">
+                        <span>February 28, 2023 • 9 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="/blog.html" class="btn btn-secondary">View All Articles</a>
             </div>
         </div>
     </section>
 
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="contact-section">
       <div class="container">
-        <div class="section-header">
-          <h2>Get in Touch</h2>
-          <p>Ready to scale your startup with AI? Let's talk!</p>
+        <!-- Hero Header -->
+        <div class="contact-hero">
+          <h1>Let's Connect</h1>
+          <p>We'd love to hear from you. Whether you're exploring AI solutions or partnerships, drop us a message.</p>
         </div>
-        <div class="contact-container">
-          <div class="contact-info">
-            <h3>Contact Information</h3>
-            <div class="contact-details">
-              <div>
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                  <h4>Location</h4>
-                  <p>San Francisco, CA</p>
+
+        <!-- Main Content -->
+        <div class="contact-main">
+          <!-- Left Column - Contact Form -->
+          <div class="contact-form-container">
+            <form class="contact-form-new" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required />
+                  <span class="error-message" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                  <span class="error-message" id="email-error"></span>
                 </div>
               </div>
-              <div>
-                <i class="fas fa-envelope"></i>
-                <div>
-                  <h4>Email</h4>
-                  <p>hello@aifirstpartners.com</p>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" />
+                </div>
+                <div class="form-group">
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company" />
                 </div>
               </div>
-              <div>
-                <i class="fas fa-phone"></i>
-                <div>
-                  <h4>Phone</h4>
-                  <p>+1 (555) 123-4567</p>
-                </div>
+              
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+                <span class="error-message" id="message-error"></span>
               </div>
-            </div>
-            <h3>Follow Us</h3>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
+              
+              <div class="form-submit-section">
+                <button type="submit" class="btn-contact-submit">
+                  <span>Send Message</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+            
+            <!-- Footer CTA -->
+            <div class="contact-cta">
+              <p>Prefer talking directly? <a href="tel:+15551234567">Call us at +1 (555) 123-4567</a></p>
             </div>
           </div>
-          <div class="glass-card">
-            <form class="contact-form">
-              <div class="form-group">
-                <input type="text" placeholder="Your Name" required />
+
+          <!-- Right Column - Contact Info -->
+          <div class="contact-info-container">
+            <div class="contact-info-card">
+              <h3>Get in Touch</h3>
+              <p>Ready to transform your business with AI? We're here to help you every step of the way.</p>
+              
+              <div class="contact-details-new">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Office</h4>
+                    <p>123 Innovation Drive<br>San Francisco, CA 94105<br>United States</p>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Email</h4>
+                    <p><a href="mailto:hello@aifirstpartners.com">hello@aifirstpartners.com</a></p>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Phone</h4>
+                    <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                  </div>
+                </div>
               </div>
-              <div class="form-group">
-                <input type="email" placeholder="Your Email" required />
+              
+              <!-- Social Links -->
+              <div class="social-section">
+                <h4>Follow Us</h4>
+                <div class="social-links-new">
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
               </div>
-              <div class="form-group">
-                <input type="text" placeholder="Subject" />
-              </div>
-              <div class="form-group">
-                <textarea placeholder="Your Message" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%">
-                Send Message
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -737,9 +950,12 @@
     <footer>
       <div class="container">
         <div class="footer-content">
-          <div class="footer-column">
+          <div class="footer-column footer-brand">
             <h4>AI First Partners</h4>
             <p>Scaling startups with intelligent AI solutions since 2020.</p>
+            <div class="footer-logo">
+              <img src="logo.svg" alt="AI First Partners" class="footer-logo-img" loading="lazy">
+            </div>
           </div>
           <div class="footer-column">
             <h4>Services</h4>
