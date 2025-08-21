@@ -34,6 +34,38 @@
         retina_detect: true,
       });
 
+      // Theme Toggle Functionality
+      const themeToggle = document.getElementById('themeToggle');
+      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      
+      // Initialize theme based on user preference or localStorage
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        // Default to light theme
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+      
+      // Theme toggle click handler
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          const currentTheme = document.documentElement.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          
+          // Add a subtle animation feedback
+          themeToggle.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            themeToggle.style.transform = 'scale(1)';
+          }, 150);
+        });
+      }
+
       // Navbar scroll effect
       window.addEventListener("scroll", function () {
         const navbar = document.getElementById("navbar");
