@@ -248,6 +248,100 @@
             color: var(--text-primary);
             font-size: 1.5rem;
             cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile Navigation Sidebar */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid var(--glass-border);
+            z-index: 1001;
+            transition: right 0.3s ease;
+            padding: 2rem;
+            box-shadow: -10px 0 30px var(--shadow-heavy);
+        }
+
+        .mobile-nav-sidebar.active {
+            right: 0;
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .mobile-nav-close {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-close:hover {
+            color: var(--neon-purple);
+            transform: scale(1.1);
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--neon-purple);
+            padding-left: 0.5rem;
+        }
+
+        .mobile-controls {
+            display: none;
+            align-items: center;
+            gap: 1rem;
         }
 
         /* Hero Section */
@@ -585,6 +679,10 @@
                 display: none;
             }
 
+            .mobile-controls {
+                display: flex;
+            }
+
             .mobile-menu-btn {
                 display: block;
             }
@@ -620,11 +718,40 @@
                     <i class="fas fa-moon theme-toggle-icon moon"></i>
                 </button>
             </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="mobile-controls">
+                <button class="theme-toggle" id="mobileThemeToggle" aria-label="Toggle theme">
+                    <div class="theme-toggle-slider"></div>
+                    <i class="fas fa-sun theme-toggle-icon sun"></i>
+                    <i class="fas fa-moon theme-toggle-icon moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Sidebar -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-sidebar" id="mobileNavSidebar">
+        <div class="mobile-nav-header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                AI First Partners
+            </div>
+            <button class="mobile-nav-close" id="mobileNavClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -818,6 +945,7 @@
     <script>
         // Theme Toggle Functionality
         const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
         
         // Initialize theme based on user preference or localStorage
         const currentTheme = localStorage.getItem('theme');
@@ -830,14 +958,21 @@
             document.documentElement.setAttribute('data-theme', 'light');
         }
         
-        // Theme toggle click handler
+        // Theme toggle function
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            return newTheme;
+        }
+        
+        // Theme toggle click handlers
         if (themeToggle) {
             themeToggle.addEventListener('click', function() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
+                toggleTheme();
                 
                 // Add a subtle animation feedback
                 themeToggle.style.transform = 'scale(0.95)';
@@ -846,6 +981,80 @@
                 }, 150);
             });
         }
+
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', function() {
+                toggleTheme();
+                
+                // Add a subtle animation feedback
+                mobileThemeToggle.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    mobileThemeToggle.style.transform = 'scale(1)';
+                }, 150);
+            });
+        }
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+        const mobileNavSidebar = document.getElementById('mobileNavSidebar');
+        const mobileNavClose = document.getElementById('mobileNavClose');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+        function openMobileMenu() {
+            mobileNavOverlay.classList.add('active');
+            mobileNavSidebar.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Change hamburger to X
+            const menuIcon = mobileMenuBtn.querySelector('i');
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        }
+
+        function closeMobileMenu() {
+            mobileNavOverlay.classList.remove('active');
+            mobileNavSidebar.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Change X back to hamburger
+            const menuIcon = mobileMenuBtn.querySelector('i');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        }
+
+        // Mobile menu event listeners
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                if (mobileNavSidebar.classList.contains('active')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+        }
+
+        if (mobileNavClose) {
+            mobileNavClose.addEventListener('click', closeMobileMenu);
+        }
+
+        if (mobileNavOverlay) {
+            mobileNavOverlay.addEventListener('click', closeMobileMenu);
+        }
+
+        // Close mobile menu when clicking on nav links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileNavSidebar.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
     </script>
 </body>
 </html>
