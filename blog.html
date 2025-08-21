@@ -7,16 +7,18 @@
     <meta name="keywords" content="AI blog, machine learning, startup growth, artificial intelligence, data science">
     <meta name="author" content="AI First Partners">
     <title>AI Insights Blog | AI First Partners</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Your Color Palette */
-            --electric-blue: #4585FF;
-            --neon-purple: #7B06FA;
-            --teal: #004A28;
+            /* Your New Color Palette */
+            --purple: #7615a4;
+            --blue: #012386;
+            --sage-blue: #04becc;
             --dark-navy: #1A1D29;
             --light-gray: #F6F6F6;
             
@@ -24,7 +26,7 @@
             --bg-primary: #ffffff;
             --bg-secondary: var(--light-gray);
             --bg-accent: rgba(246, 246, 246, 0.9);
-            --bg-hero: linear-gradient(135deg, rgba(69, 133, 255, 0.05), rgba(123, 6, 250, 0.05));
+            --bg-hero: linear-gradient(135deg, rgba(1, 35, 134, 0.05), rgba(118, 21, 164, 0.05));
             --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(69, 133, 255, 0.2);
             --text-primary: var(--dark-navy);
@@ -111,6 +113,26 @@
             text-decoration: none;
         }
 
+        .logo-svg {
+            height: 70px;
+            width: auto;
+            max-width: 320px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+            /* Crop white space by scaling and using object-position */
+            transform: scale(1.4);
+            object-position: center;
+            /* Prevent navbar expansion */
+            margin: -10px 0;
+        }
+
+        .logo-svg:hover {
+            transform: scale(1.47);
+            filter: drop-shadow(0 4px 12px rgba(118, 21, 164, 0.3));
+        }
+
+        /* Keep the old logo-icon styles for fallback/other uses */
         .logo-icon {
             width: 40px;
             height: 40px;
@@ -687,6 +709,14 @@
                 display: block;
             }
 
+            /* Responsive logo sizing for mobile */
+            .logo-svg {
+                height: 60px;
+                max-width: 280px;
+                transform: scale(1.3);
+                margin: -8px 0;
+            }
+
             .blog-container {
                 flex-direction: column;
             }
@@ -702,8 +732,7 @@
     <nav>
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon"></div>
-                AI First Partners
+                <img src="logo.svg" alt="AI First Partners" class="logo-svg">
             </a>
             <div class="nav-links">
                 <a href="index.html#home">Home</a>
@@ -736,8 +765,7 @@
     <div class="mobile-nav-sidebar" id="mobileNavSidebar">
         <div class="mobile-nav-header">
             <div class="logo">
-                <div class="logo-icon"></div>
-                AI First Partners
+                <img src="logo.svg" alt="AI First Partners" class="logo-svg">
             </div>
             <button class="mobile-nav-close" id="mobileNavClose">
                 <i class="fas fa-times"></i>
