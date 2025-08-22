@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>About AI First Partners - AI Consulting & Innovation Leaders</title>
+    <meta
+      name="description"
+      content="AI First Partners leads AI-driven transformation with expert consulting, automation solutions, and innovation strategies. Trusted AI partners for businesses worldwide."
+    />
+    <meta
+      name="keywords"
+      content="AI First Partners, AI consulting company, AI strategy experts, AI automation services, AI transformation consultants, artificial intelligence innovation, AI business solutions, machine learning consulting"
+    />
+    <meta name="author" content="AI First Partners" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="About AI First Partners - AI Consulting & Innovation Leaders"
+    />
+    <meta
+      property="og:description"
+      content="AI First Partners leads AI-driven transformation with expert consulting, automation solutions, and innovation strategies. Trusted AI partners for businesses worldwide."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aifirstpartners.com/about" />
+    <meta
+      property="og:image"
+      content="https://aifirstpartners.com/assets/og-about.jpg"
+    />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="About AI First Partners - AI Consulting & Innovation Leaders"
+    />
+    <meta
+      name="twitter:description"
+      content="AI First Partners leads AI-driven transformation with expert consulting, automation solutions, and innovation strategies."
+    />
+    <meta
+      name="twitter:image"
+      content="https://aifirstpartners.com/assets/og-about.jpg"
+    />
+    
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="favicon.svg"
+    />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- Page-specific styles -->
+    <style>
+      /* About page hero section */
+      .about-hero {
+        background: linear-gradient(135deg, var(--bg-primary) 0%, color-mix(in srgb, var(--main-color) 5%, transparent) 100%);
+        padding: 5rem 0 3rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .about-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: color-mix(in srgb, var(--main-color) 8%, transparent);
+        z-index: 1;
+      }
+      
+      .about-hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .about-hero h1 {
+        font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
+        font-weight: var(--font-weight-bold);
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        letter-spacing: var(--tracking-tight);
+        transition: transform 0.3s ease;
+      }
+      
+      .about-hero h1:hover {
+        transform: translateY(-2px);
+      }
+      
+      .about-hero p {
+        font-size: var(--text-xl);
+        color: var(--text-primary);
+        max-width: 700px;
+        margin: 0 auto 1rem;
+        line-height: var(--leading-relaxed);
+        opacity: 0.9;
+      }
+      
+      /* Mission & Vision Cards - Following index.html service-card design */
+      .mission-vision-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+      
+      .mission-vision-card {
+        text-align: center;
+        padding: 2.5rem 2rem;
+        background: white;
+        border: 1px solid color-mix(in srgb, var(--main-color) 15%, transparent);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      
+      .mission-vision-card:hover {
+        background: color-mix(in srgb, var(--main-color) 10%, transparent);
+        border-color: color-mix(in srgb, var(--main-color) 25%, transparent);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px color-mix(in srgb, var(--main-color) 15%, transparent);
+      }
+      
+      .mission-vision-card .card-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--primary-color);
+        font-size: 2rem;
+        color: white;
+      }
+      
+      .mission-vision-card h3 {
+        font-size: var(--text-xl);
+        font-weight: var(--font-weight-semibold);
+        letter-spacing: var(--tracking-normal);
+        line-height: var(--leading-snug);
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+      
+      .mission-vision-card p {
+        font-size: var(--text-base);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--leading-normal);
+        letter-spacing: var(--tracking-normal);
+        color: var(--text-primary);
+      }
+      
+      /* Why Choose Us Section - Following service-card design */
+      .why-choose-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.2rem;
+        margin: 1.5rem 0;
+      }
+      
+      .feature-card {
+        text-align: center;
+        padding: 1.5rem 1.2rem;
+        background: white;
+        border: 1px solid color-mix(in srgb, var(--main-color) 15%, transparent);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      
+      .feature-card:hover {
+        background: color-mix(in srgb, var(--main-color) 10%, transparent);
+        border-color: color-mix(in srgb, var(--main-color) 25%, transparent);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px color-mix(in srgb, var(--main-color) 15%, transparent);
+      }
+      
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--primary-color);
+        font-size: 1.6rem;
+        color: white;
+      }
+      
+      .feature-card h3 {
+        font-size: var(--text-xl);
+        font-weight: var(--font-weight-semibold);
+        letter-spacing: var(--tracking-normal);
+        line-height: var(--leading-snug);
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+      
+      .feature-card p {
+        font-size: var(--text-base);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--leading-normal);
+        letter-spacing: var(--tracking-normal);
+        color: var(--text-primary);
+      }
+      
+      /* Leadership Team - Following glass-card design from main CSS */
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.2rem;
+        margin: 1.5rem 0;
+      }
+      
+      .team-member {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 1.2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      
+      .team-member:hover {
+        transform: translateY(-5px);
+        background: var(--card-hover);
+      }
+      
+      .member-avatar {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--main-color), #6E56CF);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.8rem;
+        font-size: 2rem;
+        color: white;
+        font-weight: var(--font-weight-bold);
+        transition: transform 0.3s ease;
+      }
+      
+      .team-member:hover .member-avatar {
+        transform: scale(1.1) rotate(5deg);
+      }
+      
+      .member-role {
+        color: var(--main-color);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: 0.6rem;
+      }
+      
+      /* Trust Section */
+      .trust-section {
+        background: color-mix(in srgb, var(--main-color) 3%, transparent);
+        padding: 2rem 0;
+        border-radius: 20px;
+        margin: 2rem 0;
+      }
+      
+      .trust-logos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        align-items: center;
+        margin: 1rem 0;
+      }
+      
+      .trust-logo {
+        background: white;
+        padding: 1rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 15px color-mix(in srgb, var(--main-color) 10%, transparent);
+        transition: transform 0.3s ease;
+        border: 1px solid color-mix(in srgb, var(--main-color) 15%, transparent);
+      }
+      
+      .trust-logo:hover {
+        transform: translateY(-3px);
+      }
+      
+      .trust-logo img {
+        max-width: 100%;
+        height: 60px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+      }
+      
+      .trust-logo:hover img {
+        filter: grayscale(0%);
+      }
+      
+      /* CTA Section - Following main design system */
+      .cta-section {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        margin: 2rem 0;
+        transition: all 0.3s ease;
+      }
+      
+      .cta-section:hover {
+        transform: translateY(-5px);
+        background: var(--card-hover);
+      }
+      
+      .cta-content h2 {
+        font-size: var(--text-3xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--text-primary);
+        margin-bottom: 0.8rem;
+        letter-spacing: var(--tracking-tight);
+      }
+      
+      .cta-content p {
+        font-size: var(--text-lg);
+        color: var(--text-primary);
+        line-height: var(--leading-relaxed);
+        margin-bottom: 1.2rem;
+        opacity: 0.9;
+      }
+      
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1.2rem;
+      }
+      
+      .btn-cta {
+        background: var(--primary-color);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: var(--font-weight-semibold);
+        transition: all 0.3s ease;
+        border: 2px solid var(--primary-color);
+        font-size: var(--text-base);
+      }
+      
+      .btn-cta:hover {
+        background: transparent;
+        color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px color-mix(in srgb, var(--main-color) 15%, transparent);
+      }
+      
+      .btn-cta-secondary {
+        background: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+      }
+      
+      .btn-cta-secondary:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+      
+      /* Footer - Matching index.html styles */
+      footer {
+        padding: 2rem 0 1rem;
+      }
+      
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .about-hero {
+          padding: 4rem 0 2rem;
+        }
+        
+        .mission-vision-grid,
+        .why-choose-grid,
+        .team-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        
+        .feature-card {
+          padding: 1.5rem 1rem;
+        }
+        
+        .team-member {
+          padding: 1.2rem;
+        }
+        
+        .trust-section {
+          padding: 2rem 0;
+          margin: 2rem 0;
+        }
+        
+        .cta-section {
+          padding: 2rem 1rem;
+          margin: 2rem 0;
+        }
+        
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .btn-cta {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <img src="logo.svg" alt="AI First Partners - AI Consulting Company" class="logo-svg">
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          
+          <a href="about.html" class="nav-link active" aria-current="page">About</a>
+
+          <div class="nav-item dropdown">
+            <a href="index.html#services" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Services
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="index.html#services" class="dropdown-link" role="menuitem">AI Strategy</a>
+                <a href="index.html#services" class="dropdown-link" role="menuitem">Machine Learning</a>
+                <a href="index.html#services" class="dropdown-link" role="menuitem">Data Analytics</a>
+                <a href="index.html#services" class="dropdown-link" role="menuitem">NLP Solutions</a>
+                <a href="index.html#services" class="dropdown-link" role="menuitem">Automation</a>
+                <a href="index.html#services" class="dropdown-link" role="menuitem">AI Security</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a href="index.html#partnerships" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Partnerships
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="index.html#partnerships" class="dropdown-link" role="menuitem">Strategic Alliances</a>
+                <a href="index.html#partnerships" class="dropdown-link" role="menuitem">OpenAI Partnership</a>
+                <a href="index.html#partnerships" class="dropdown-link" role="menuitem">Google Cloud</a>
+                <a href="index.html#partnerships" class="dropdown-link" role="menuitem">AWS Partnership</a>
+                <a href="index.html#partnerships" class="dropdown-link" role="menuitem">Microsoft Partnership</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a href="blog.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Insights
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="index.html#blog" class="dropdown-link" role="menuitem">Blog</a>
+                <a href="article-generative-ai-startups.html" class="dropdown-link" role="menuitem">Generative AI in Startups</a>
+                <a href="blog.html" class="dropdown-link" role="menuitem">All Articles</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+
+          <div class="nav-item dropdown">
+            <a href="index.html#contact" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Contact
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu contact-dropdown" role="menu">
+              <div class="dropdown-content">
+                <div class="contact-quick-info">
+                  <div class="contact-item-nav">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:hello@aifirstpartners.com" class="dropdown-link" role="menuitem">hello@aifirstpartners.com</a>
+                  </div>
+                  <div class="contact-item-nav">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+15551234567" class="dropdown-link" role="menuitem">+1 (555) 123-4567</a>
+                  </div>
+                  <div class="contact-item-nav">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="dropdown-text">San Francisco, CA</span>
+                  </div>
+                  <hr class="dropdown-divider">
+                  <a href="index.html#contact" class="dropdown-link cta-link" role="menuitem">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-controls">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open mobile menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation Sidebar -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-sidebar" id="mobileNavSidebar">
+      <div class="mobile-nav-header">
+        <div class="logo">
+          <img src="logo.svg" alt="AI First Partners" class="logo-svg">
+        </div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close mobile menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="about.html" class="mobile-nav-link active">About</a>
+        
+        <div class="mobile-nav-item dropdown">
+          <button class="mobile-nav-link dropdown-toggle" aria-expanded="false">
+            Services
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="index.html#services" class="mobile-dropdown-link">AI Strategy</a>
+            <a href="index.html#services" class="mobile-dropdown-link">Machine Learning</a>
+            <a href="index.html#services" class="mobile-dropdown-link">Data Analytics</a>
+            <a href="index.html#services" class="mobile-dropdown-link">NLP Solutions</a>
+            <a href="index.html#services" class="mobile-dropdown-link">Automation</a>
+            <a href="index.html#services" class="mobile-dropdown-link">AI Security</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-item dropdown">
+          <button class="mobile-nav-link dropdown-toggle" aria-expanded="false">
+            Partnerships
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="index.html#partnerships" class="mobile-dropdown-link">Strategic Alliances</a>
+            <a href="index.html#partnerships" class="mobile-dropdown-link">OpenAI Partnership</a>
+            <a href="index.html#partnerships" class="mobile-dropdown-link">Google Cloud</a>
+            <a href="index.html#partnerships" class="mobile-dropdown-link">AWS Partnership</a>
+            <a href="index.html#partnerships" class="mobile-dropdown-link">Microsoft Partnership</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-item dropdown">
+          <button class="mobile-nav-link dropdown-toggle" aria-expanded="false">
+            Insights
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </button>
+          <div class="mobile-dropdown-content">
+            <a href="index.html#blog" class="mobile-dropdown-link">Blog</a>
+            <a href="article-generative-ai-startups.html" class="mobile-dropdown-link">Generative AI in Startups</a>
+            <a href="blog.html" class="mobile-dropdown-link">All Articles</a>
+          </div>
+        </div>
+
+        <a href="index.html#testimonials" class="mobile-nav-link">Testimonials</a>
+        <a href="index.html#contact" class="mobile-nav-link mobile-nav-cta">Contact</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="about-hero" class="about-hero">
+      <div class="container">
+        <div class="about-hero-content">
+          <h1>AI First Partners – AI Consulting & Innovation</h1>
+          <p>
+            We are a forward-focused AI consulting and software services company, leading businesses through 
+            intelligent transformation with cutting-edge artificial intelligence solutions, automation strategies, 
+            and innovation-first approaches that drive measurable results.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Why Choose Us Section -->
+      <section id="why-choose-us" class="section" style="padding: 2rem 0; background: color-mix(in srgb, var(--main-color) 2%, transparent);">
+        <div class="container">
+          <div class="section-header">
+            <h2>Why AI First Partners is Your Trusted AI Innovation Partner</h2>
+            <p>
+              Our unique combination of technical expertise, business acumen, and innovation-first 
+              approach sets us apart in the AI consulting landscape.
+            </p>
+          </div>
+          <div class="why-choose-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Innovation-First Approach</h3>
+              <p>We stay at the forefront of AI research and development, continuously exploring emerging technologies like generative AI, large language models, and autonomous systems.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h3>Global Reach, Local Expertise</h3>
+              <p>With clients across North America, Europe, and Asia, we bring global best practices while understanding local market dynamics and regulatory requirements.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Human-Centric AI</h3>
+              <p>We design AI solutions that augment human capabilities rather than replace them, ensuring ethical implementation and positive organizational impact.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Proven ROI Track Record</h3>
+              <p>Our clients see an average 300% ROI within 12 months, with measurable improvements in efficiency, decision-making, and competitive positioning.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3>Enterprise-Grade Security</h3>
+              <p>We implement robust security frameworks and privacy protocols, ensuring compliance with GDPR, CCPA, and industry-specific regulations.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3>True Partnership Model</h3>
+              <p>We work as an extension of your team, providing ongoing support, training, and optimization to ensure long-term success and continuous improvement.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Leadership Team -->
+      <section id="leadership" class="section" style="padding: 2rem 0; background: color-mix(in srgb, var(--main-color) 2%, transparent);">
+        <div class="container">
+          <div class="section-header">
+            <h2>Leadership Team</h2>
+            <p>
+              Meet the AI experts and industry veterans leading our mission to democratize 
+              artificial intelligence for businesses worldwide.
+            </p>
+          </div>
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="member-avatar">
+                <img src="ceo.jpg" alt="Sarah Smith - CEO & Co-Founder" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+              </div>
+              <h3>Sarah Smith</h3>
+              <p class="member-role">CEO & Co-Founder</p>
+              <p>Former AI Director at Google with 15+ years in AI strategy and enterprise transformation. PhD in Computer Science from Stanford University. Leads our global vision and client relationships.</p>
+            </div>
+            <div class="team-member">
+              <div class="member-avatar">
+                <img src="cto.jpg" alt="Michael Johnson - CTO & Co-Founder" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+              </div>
+              <h3>Michael Johnson</h3>
+              <p class="member-role">CTO & Co-Founder</p>
+              <p>Ex-Microsoft AI Research scientist specializing in machine learning infrastructure and scalable AI systems. MIT PhD in Artificial Intelligence. Oversees technical innovation and platform development.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust & Partners Section -->
+      <section id="trust-partners" class="section" style="padding: 2rem 0;">
+        <div class="container">
+          <div class="trust-section">
+            <div class="section-header">
+              <h2>Trusted by Industry Leaders</h2>
+              <p>
+                We partner with leading technology companies and serve clients across Fortune 500 enterprises, 
+                innovative startups, and growth-stage companies worldwide.
+              </p>
+            </div>
+            <div class="trust-logos">
+              <div class="trust-logo">
+                <img src="openai.svg" alt="OpenAI Partnership - AI First Partners" style="height: 40px;">
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; font-weight: 600;">OpenAI Partner</p>
+              </div>
+              <div class="trust-logo">
+                <img src="google.png" alt="Google Cloud Partnership - AI Consulting" style="height: 40px;">
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; font-weight: 600;">Google Cloud</p>
+              </div>
+              <div class="trust-logo">
+                <img src="aws.png" alt="AWS Partnership - AI Solutions" style="height: 40px;">
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; font-weight: 600;">AWS Partner</p>
+              </div>
+              <div class="trust-logo">
+                <img src="microsoft.svg" alt="Microsoft Partnership - AI Innovation" style="height: 40px;">
+                <p style="margin-top: 0.5rem; font-size: 0.8rem; font-weight: 600;">Microsoft Partner</p>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+              <p style="font-style: italic; color: var(--text-primary); opacity: 0.8;">
+                "Working with Fortune 500 companies, innovative startups, and everything in between"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section id="cta" class="section" style="padding: 2rem 0;">
+        <div class="container">
+          <div class="cta-section">
+            <div class="cta-content">
+              <h2>Ready to Transform Your Business with AI?</h2>
+              <p>
+                Join hundreds of companies that trust AI First Partners to lead their artificial intelligence 
+                transformation. Let's discuss how our AI consulting expertise can accelerate your growth 
+                and innovation goals.
+              </p>
+              <div class="cta-buttons">
+                <a href="index.html#contact" class="btn-cta">Start Your AI Journey</a>
+                <a href="index.html#services" class="btn-cta btn-cta-secondary">Explore Our Services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column footer-brand">
+            <h4>AI First Partners</h4>
+            <p>Leading AI consulting and innovation company helping businesses transform with artificial intelligence since 2020.</p>
+            <div class="footer-logo">
+              <img src="logo.svg" alt="AI First Partners Logo" class="footer-logo-img" loading="lazy">
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#services">AI Strategy & Consulting</a></li>
+              <li><a href="index.html#services">Machine Learning Solutions</a></li>
+              <li><a href="index.html#services">Data Analytics & Strategy</a></li>
+              <li><a href="index.html#services">Process Automation</a></li>
+              <li><a href="index.html#services">Generative AI Solutions</a></li>
+              <li><a href="index.html#services">AI Security & Governance</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About AI First Partners</a></li>
+              <li><a href="index.html#testimonials">Client Success Stories</a></li>
+              <li><a href="index.html#partnerships">Strategic Partnerships</a></li>
+              <li><a href="index.html#contact">Contact Our Team</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#blog">AI Insights Blog</a></li>
+              <li><a href="article-generative-ai-startups.html">Generative AI for Startups</a></li>
+              <li><a href="blog.html">All Articles & Resources</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact Info</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:hello@aifirstpartners.com"><i class="fas fa-envelope"></i> hello@aifirstpartners.com</a></li>
+              <li><a href="tel:+15551234567"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
+              <li><span><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 AI First Partners. All rights reserved. Leading AI consulting and innovation solutions.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
