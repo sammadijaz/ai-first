@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aifirstpartners.com/sitemap.xml
+
+# Allow crawling of all main pages
+Allow: /index.html
+Allow: /about.html
+Allow: /blog.html
+Allow: /article-generative-ai-startups.html
+
+# Allow crawling of assets and resources
+Allow: /style.css
+Allow: /script.js
+Allow: /favicon.svg
+Allow: /logo.svg
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.svg
+Allow: /*.ico
+
+# Crawl-delay to be respectful to server resources
+Crawl-delay: 1
+
+# Common disallows (if any future admin or private areas exist)
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
+
+# Additional instructions for search engines
+# This robots.txt allows all legitimate crawlers to access AI First Partners content
+# Last updated: 2025-08-22
