@@ -675,3 +675,60 @@ function toggleMap() {
     toggleBtn.innerHTML = '<i class="fas fa-map"></i> View on Map';
   }
 }
+
+// Lazy Loading Fallback for Older Browsers
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if browser supports native lazy loading
+  if ('loading' in HTMLImageElement.prototype) {
+    // Native lazy loading is supported, no need for polyfill
+    return;
+  }
+  
+  // Fallback for browsers that don't support native lazy loading
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  
+  if (lazyImages.length === 0) return;
+  
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        
+        // Add fade-in effect
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease-in-out';
+        
+        // Load the image
+        img.onload = function() {
+          img.style.opacity = '1';
+        };
+        
+        // Stop observing this image
+        observer.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '50px 0px', // Start loading 50px before image enters viewport
+    threshold: 0.01
+  });
+  
+  lazyImages.forEach(img => {
+    imageObserver.observe(img);
+  });
+});
+
+// Performance optimization: Preload critical images
+document.addEventListener('DOMContentLoaded', function() {
+  const criticalImages = [
+    'logo.svg',
+    'favicon.svg'
+  ];
+  
+  criticalImages.forEach(imageSrc => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = imageSrc;
+    document.head.appendChild(link);
+  });
+});
